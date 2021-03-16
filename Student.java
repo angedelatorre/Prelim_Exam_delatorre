@@ -1,36 +1,47 @@
 
 public class Student {
-	public int IDnum;
-	public int credithours;
-	public int points;
+	private int IDnum;
+	private int credithours;
+	private int points;
+	private double a;
 	
- //constructor 
-	public Student(int sIDnum, int scredithours, int spoints) {
-        this.IDnum = sIDnum;
-        this.credithours = scredithours;
-        this.points = spoints;
+	public Student() {
     }
 	
-	public int getnum() {
+ //constructor 
+	public Student(int IDnum, int credithours, int points) {
+        this.IDnum = IDnum;
+        this.credithours = credithours;
+        this.points = points;
+        calculateGradePoint();
+    }
+	
+	public int getIDnum() {
 		return IDnum;
 	}
-	public int getch() {
+	public void setIDnum(int IDnum) {
+        this.IDnum = IDnum;
+    }
+	public int getCredithours() {
 		return credithours;
 	}
-	public int getpts() {
+	 public void setCredithours(int credithours) {
+	        this.credithours = credithours;
+	    }
+	public int getPoints() {
 		return points;
 	}
-	public void setnum(int a)
-	{
-		IDnum = a;
-	}
-	public void setch(int b)
-	{
-		credithours = b;
-	}
-	public void setpts(int c)
-	{
-		points = c;
-	}
+	  public void setPoints(int points) {
+	        this.points = points;
+	    }
+	  @Override
+	   public String toString() {
+	       return "\nID number: " + IDnum + "\nPoints Earned:  " + points + "\nCredit hours:  " +  credithours + "\nGrade point average : "
+	               + a;
+	   }
+
+	   public void calculateGradePoint() {
+	       a = points / (double) credithours;
+	   }
 }
 
