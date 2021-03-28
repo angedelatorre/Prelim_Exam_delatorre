@@ -3,7 +3,7 @@ public class Student {
 	private int IDnum;
 	private int credithours;
 	private int points;
-	private double a;
+	private double grade;
 	
 	public Student() {
     }
@@ -37,11 +37,11 @@ public class Student {
 	  @Override
 	   public String toString() {
 	       return "\nID number: " + IDnum + "\nPoints Earned:  " + points + "\nCredit hours:  " +  credithours + "\nGrade point average : "
-	               + a;
+	               + grade;
 	   }
 
 	   public void calculateGradePoint() {
-	       a = points / (double) credithours;
+	       grade = points / (double) credithours;
 	   }
 }
 
